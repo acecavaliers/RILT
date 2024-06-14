@@ -107,7 +107,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
                                             <div className="pt-3 sm:pt-5 lg:pt-0">
                                                 <h2 className="text-xl font-semibold text-black dark:text-white">
-                                                    Documentation
+                                                    Preview
                                                 </h2>
 
                                                 <p className="mt-4 text-sm/relaxed">
@@ -153,7 +153,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     </div>
 
                                     <div className="pt-3 sm:pt-5">
-                                        <h2 className="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
+                                        <h2 className="text-xl font-semibold text-black dark:text-white">Module 1</h2>
 
                                         <p className="mt-4 text-sm/relaxed">
                                             Laracasts offers thousands of video tutorials on Laravel, PHP, and
@@ -198,7 +198,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
                                     <div className="pt-3 sm:pt-5">
                                         <h2 className="text-xl font-semibold text-black dark:text-white">
-                                            Laravel News
+                                        Module 2
                                         </h2>
 
                                         <p className="mt-4 text-sm/relaxed">
@@ -239,7 +239,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
                                     <div className="pt-3 sm:pt-5">
                                         <h2 className="text-xl font-semibold text-black dark:text-white">
-                                            Vibrant Ecosystem
+                                        Module 3
                                         </h2>
 
                                         <p className="mt-4 text-sm/relaxed">
