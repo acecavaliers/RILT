@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('status');
-            $table->tinyInteger('is_active');
+            $table->foreignId('project_id')->constrained('id');
             $table->timestamps();
         });
     }
