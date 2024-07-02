@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('status');
-            $table->foreignId('project_id')->constrained('id');
+            $table->foreignId('project_id')->constrained('project');
             $table->timestamps();
         });
     }
