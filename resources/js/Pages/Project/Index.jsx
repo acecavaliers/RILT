@@ -1,4 +1,5 @@
 import Pagination from "@/Components/Pagination";
+import { PROJECT_STATUS_CLASS_MAP, PROJECT_STATUS_TEXT_MAP } from "@/constants";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head, Link } from "@inertiajs/react";
 
@@ -30,7 +31,7 @@ export default function Index({auth, projects}){
                             <tbody>
                                 {projects.data.map(project => (
                                     
-                                <tr className="bg-white border-b">
+                                <tr className="bg-white border-b" key={project.id}>
                                     <td className="px-3 py-2">
                                         {project.id}
                                     </td>
@@ -41,7 +42,11 @@ export default function Index({auth, projects}){
                                         {project.name}
                                     </td>
                                     <td className="px-3 py-2">
-                                        {project.status}
+                                        <span className={"w-full px-2 py-1 rounded text-white " + 
+                                            PROJECT_STATUS_CLASS_MAP[project.status]
+                                        }>
+                                            {PROJECT_STATUS_TEXT_MAP[project.status]}
+                                        </span>
                                     </td>
                                     <td className="px-3 py-2">
                                         {project.created_at}
