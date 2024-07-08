@@ -4,7 +4,7 @@ import TextInput from "@/Components/TextInput";
 import { PROJECT_STATUS_CLASS_MAP, PROJECT_STATUS_TEXT_MAP } from "@/constants";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head, Link, router } from "@inertiajs/react";
-import { ChevronUpIcon, ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/16/solid'
+import { ChevronUpIcon, ChevronDownIcon, MagnifyingGlassIcon, PlusCircleIcon } from '@heroicons/react/16/solid'
 
 export default function Index({auth, projects, queryParams = null}){
     queryParams = queryParams || {}
@@ -48,29 +48,37 @@ export default function Index({auth, projects, queryParams = null}){
                         <div className="p-6 text-gray-900 dark:text-gray-100">Project List</div>
                         {/* <pre>{JSON.stringify(projects, undefined, 2)}</pre> */}
                         <div className="overflow-auto">
-                            <div className="pl-2 mb-2 space-x-4 flex justify-start">
-                                <div className="bg-gray-200 rounded-md pl-2 space-x-2 flex justify-start">
-                                    <MagnifyingGlassIcon className="w-5"></MagnifyingGlassIcon>
-                                    <TextInput
+                            <div className="flex justify-between">
+                                <div className="pl-2 mb-2 space-x-4 flex justify-start">
+                                    <div className="bg-gray-200 rounded-md pl-2 space-x-2 flex justify-start">
+                                        <MagnifyingGlassIcon className="w-5"></MagnifyingGlassIcon>
+                                        <TextInput
+                                        className="w-full rounded-l"
+                                        defaultValue = {queryParams.name}
+                                        placeholder="Project Name"
+                                        onBlur={e => searchFieldChanged('name', e.target.value)}
+                                        onKeyPress={e => onKeyPress('name', e)} />
+                                    </div>
+                                    <div className="bg-gray-200 rounded-md pl-2 space-x-2 flex justify-start">
+                                    <h1 className="mt-2">Filter</h1>
+                                    <SelectInput
                                     className="w-full rounded-l"
-                                    defaultValue = {queryParams.name}
-                                    placeholder="Project Name"
-                                    onBlur={e => searchFieldChanged('name', e.target.value)}
-                                    onKeyPress={e => onKeyPress('name', e)} />
+                                    defaultValue = {queryParams.status}
+                                    onChange={e=> searchFieldChanged("status", e.target.value)}
+                                    >
+                                        <option value="">Select</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="in_progress">In Progress</option>
+                                        <option value="completed">Completed</option>
+                                    </SelectInput>
+                                    </div>
                                 </div>
-                                <div className="bg-gray-200 rounded-md pl-2 space-x-2 flex justify-start">
-                                <h1 className="mt-2">Filter</h1>
-                                <SelectInput
-                                className="w-full rounded-l"
-                                defaultValue = {queryParams.status}
-                                onChange={e=> searchFieldChanged("status", e.target.value)}
-                                >
-                                    <option value="">Select</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="in_progress">In Progress</option>
-                                    <option value="completed">Completed</option>
-                                </SelectInput>
-                                </div>
+                                <button className="bg-blue-500 text-gray-50 h-10 rounded px-2 mr-2 hover:bg-blue-700"> 
+                                    <span className="flex justify-between space-x-1">
+                                        <PlusCircleIcon className="w-4"/>
+                                        <h1>New Project</h1>
+                                    </span>
+                                </button>
                             </div>
                             <table className="w-full text-sm text-left text-gray-500">
                                 <thead className="text-xs text-gray-700 uppercase bg-gray-50">
