@@ -8,7 +8,7 @@ export default function Index({auth, projects}){
         <AuthenticatedLayout
             user={auth.user}
             header={<h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Projects</h2>}
-        >   
+        >
             <Head title="Projects" />
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -30,19 +30,19 @@ export default function Index({auth, projects}){
                             </thead>
                             <tbody>
                                 {projects.data.map(project => (
-                                    
+
                                 <tr className="bg-white border-b" key={project.id}>
                                     <td className="px-3 py-2">
                                         {project.id}
                                     </td>
                                     <td className="px-3 py-2">
-                                        <img src={project.img_path} style={{width:60}} />                                        
+                                        <img src={project.img_path} style={{width:60}} />
                                     </td>
                                     <td className="px-3 py-2">
                                         {project.name}
                                     </td>
-                                    <td className="px-3 py-2">
-                                        <span className={"w-full px-2 py-1 rounded text-white " + 
+                                    <td className="px-1 py-2">
+                                        <span className={"px-2 py-1 font-medium " +
                                             PROJECT_STATUS_CLASS_MAP[project.status]
                                         }>
                                             {PROJECT_STATUS_TEXT_MAP[project.status]}
@@ -67,7 +67,7 @@ export default function Index({auth, projects}){
                                 </tr>
 
                                 ))}
-                                
+
                             </tbody>
                         </table>
                         <Pagination links={projects.meta.links}>
