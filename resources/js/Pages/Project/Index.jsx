@@ -73,10 +73,11 @@ export default function Index({auth, projects, queryParams = null}){
                                     </SelectInput>
                                     </div>
                                 </div>
-                                <button className="bg-blue-500 text-gray-50 h-10 rounded px-2 mr-2 hover:bg-blue-700"> 
+                                <button className="bg-gray-900 text-gray-50 h-10 rounded px-2 mr-2 hover:bg-gray-800"> 
                                     <span className="flex justify-between space-x-1">
                                         <PlusCircleIcon className="w-4"/>
                                         <h1>New Project</h1>
+                                        
                                     </span>
                                 </button>
                             </div>
@@ -144,7 +145,10 @@ export default function Index({auth, projects, queryParams = null}){
                                             <img src={project.img_path} style={{width:60}} />
                                         </td>
                                         <td className="px-3 py-2">
-                                            {project.name}
+                                            <h1 className="font-medium text-gray-700">{project.name}</h1>
+                                            <p className="inline-block">
+                                            {project.descrption}
+                                            </p>
                                         </td>
                                         <td className="px-1 py-2">
                                             <span className={"px-2 py-1 font-medium " +
