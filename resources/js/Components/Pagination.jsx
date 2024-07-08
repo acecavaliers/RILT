@@ -4,16 +4,16 @@ export default function Pagination({links}){
     return(
         <nav className="text-center mt-4">
             {links.map(link =>(
-                <Link 
+                <Link
                 preserveScroll
                 href={link.url || ""}
                 key={link.label}
                 className={
-                    "inline-block py-2 px-3 rounded-lg  text-xs" +
-                    (link.active ? "bg-gray-900 text-xs text-gray-200" : " text-gray-400 ") +
-                    (!link.url ? "!text-gray-200 cursor-not allowed" : "hover:bg-gray-900")
+                    "inline-block py-2 px-3 rounded-lg  text-xs text-gray-500 " +
+                    (link.active ? "bg-gray-950 text-xs text-gray-50 " : " ") +
+                    (!link.url ? "!text-gray-400 cursor-not allowed " : " hover:bg-gray-950 ")
                 } dangerouslySetInnerHTML={{__html: link.label}}>
-                    
+
                 </Link>
             ))}
         </nav>
