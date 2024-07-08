@@ -5,7 +5,7 @@ import { PROJECT_STATUS_CLASS_MAP, PROJECT_STATUS_TEXT_MAP } from "@/constants";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head, Link, router } from "@inertiajs/react";
 
-export default function Index({auth, projects, queryParams= null}){
+export default function Index({auth, projects, queryParams = null}){
     queryParams = queryParams || {}
     const searchFieldChanged = (name, value) =>{
         if(value){
@@ -43,6 +43,7 @@ export default function Index({auth, projects, queryParams= null}){
                                     <th className="px-3 py-3">
                                         <TextInput
                                         className="w-full"
+                                        defaultValue = {queryParams.name}
                                         placeholder="Project Name"
                                         onBlur={e => searchFieldChanged('name', e.target.value)}
                                         onKeyPress={e => onKeyPress('name', e)} />
@@ -50,6 +51,7 @@ export default function Index({auth, projects, queryParams= null}){
                                     <th className="px-3 py-3">
                                         <SelectInput
                                         className="w-full"
+                                        defaultValue = {queryParams.status}
                                         onChange={e=> searchFieldChanged("status", e.target.value)}
                                         >
                                             <option value="">Select</option>
