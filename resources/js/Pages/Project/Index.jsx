@@ -28,6 +28,8 @@ export default function Index({auth, projects, queryParams = null}){
         if(name === queryParams.sort_field){
             if (queryParams.sort_direction === "asc"){
                 queryParams.sort_direction = "desc";
+            }else {
+                queryParams.sort_direction = "asc";
             }
         } else {
             queryParams.sort_field = name;
