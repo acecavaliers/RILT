@@ -143,10 +143,10 @@ export default function Index({auth, projects, queryParams = null}){
                                             {project.id}
                                         </td>
                                         <td className="px-3 py-2">
-                                            <img src={project.img_path} style={{width:60}} />
+                                            <img src={project.img_path} className="rounded" style={{width:40}} />
                                         </td>
-                                        <td className="px-3 py-2 max-w-2xl">
-                                            <div className="max-w-2xl">
+                                        <td className="px-3 py-2 max-w-lg">
+                                            <div className="w-full">
                                                 <h1 className="font-medium text-gray-700">{project.name}</h1>
                                                 <p className="text-xs whitespace-nowrap overflow-hidden text-ellipsis">
                                                     {project.descrption}
