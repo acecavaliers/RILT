@@ -77,7 +77,7 @@ export default function Index({auth, projects, queryParams = null}){
                             <button className="bg-gray-900 text-gray-50 h-10 rounded-md px-2 mr-2 hover:bg-gray-800">
                                 <span className="flex justify-between space-x-1">
                                     <PlusCircleIcon className="w-4"/>
-                                    <h1>New Project</h1>
+                                    <h1>Add New</h1>
 
                                 </span>
                             </button>
