@@ -50,11 +50,11 @@ export default function Index({auth, projects, queryParams = null}){
                         <div className="p-6 text-gray-900 dark:text-gray-100">Projects List</div>
                         {/* <pre>{JSON.stringify(projects, undefined, 2)}</pre> */}
                         <div className="flex justify-between">
-                            <div className="pl-2 mb-2 space-x-4 flex justify-start">
+                            <div className="pl-2 mb-2 h-10 space-x-4 flex justify-start">
                                 <div className="bg-gray-200 rounded-md pl-2 space-x-2 flex justify-start">
                                     <MagnifyingGlassIcon className="w-5"></MagnifyingGlassIcon>
                                     <TextInput
-                                    className="w-full rounded-lg"
+                                    className="w-full rounded-lg h-10"
                                     defaultValue = {queryParams.name}
                                     placeholder="Project Name"
                                     onBlur={e => searchFieldChanged('name', e.target.value)}
