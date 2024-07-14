@@ -74,11 +74,10 @@ export default function Index({auth, projects, queryParams = null}){
                                 </SelectInput>
                                 </div>
                             </div>
-                            <button className="bg-gray-900 text-gray-50 h-10 rounded-md px-2 mr-2 hover:bg-gray-800">
+                            <button className="bg-gray-900 text-gray-50 h-10 border rounded-md px-2 mr-2 hover:bg-gray-200 hover:text-gray-900 hover:border-gray-400">
                                 <span className="flex justify-between space-x-1">
                                     <PlusCircleIcon className="w-4"/>
                                     <h1>Add New</h1>
-
                                 </span>
                             </button>
                         </div>
