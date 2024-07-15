@@ -41,13 +41,13 @@ export default function Index({auth, projects, queryParams = null}){
     return(
         <AuthenticatedLayout
             user={auth.user}
-            header={<h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Projects</h2>}
+            header={<h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">User</h2>}
         >
-            <Head title="Projects" />
+            <Head title="User" />
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900 dark:text-gray-100">Projects List</div>
+                        <div className="p-6 text-gray-900 dark:text-gray-100">User List</div>
                         {/* <pre>{JSON.stringify(projects, undefined, 2)}</pre> */}
                         <div className="flex justify-between">
                             <div className="pl-2 mb-2 space-x-4 flex justify-start">
